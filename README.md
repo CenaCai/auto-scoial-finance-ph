@@ -96,37 +96,37 @@ auto-social-finance-ph/
 │   ├── collectors/             # 新闻采集
 │   │   ├── __init__.py
 │   │   ├── google_news.py      # Google News RSS
-│   │   ├── serper_paa.py       # Serper PAA（复用现有）
-│   │   └── twitter_finance.py  # Twitter 金融话题
+│   │   └── serper_paa.py       # Serper PAA
 │   │
 │   ├── content/                # 内容处理
 │   │   ├── __init__.py
-│   │   ├── rewriter.py         # AI 改写（Gemini/Claude）
-│   │   ├── persona.py          # 人设配置
+│   │   ├── rewriter.py         # AI 改写（Gemini）
 │   │   └── filter.py           # 敏感词过滤
 │   │
 │   ├── media/                  # 素材生成
 │   │   ├── __init__.py
-│   │   ├── image_gen.py        # 图片生成（Canva/Pexels）
-│   │   └── video_gen.py        # 视频生成（口播）
+│   │   ├── image_gen.py        # 图片生成（Pexels + Pillow）
+│   │   └── README.md           # 图片生成说明
 │   │
 │   ├── browser/                # 浏览器自动化
 │   │   ├── __init__.py
-│   │   ├── fingerprint.py      # 指纹配置
-│   │   ├── facebook.py         # Facebook 自动发帖
-│   │   ├── tiktok.py           # TikTok 自动发布
-│   │   └── xcom.py             # X.com 自动发推
+│   │   ├── adspower.py          # AdsPower 集成（主力）
+│   │   ├── fingerprint.py       # 原生 Playwright（备选）
+│   │   ├── facebook.py          # Facebook 发布逻辑
+│   │   ├── tiktok.py            # TikTok 发布逻辑
+│   │   └── xcom.py              # X.com 发布逻辑
 │   │
 │   ├── sheets/                 # Google Sheet 管理
 │   │   ├── __init__.py
-│   │   └── content_calendar.py # 内容日历读写
+│   │   ├── content_calendar.py  # 内容日历读写
+│   │   └── setup_calendar.py    # 初始化日历
 │   │
 │   └── scheduler/              # 调度发布
 │       ├── __init__.py
 │       └── publisher.py        # 发布调度逻辑
 │
 ├── config/
-│   ├── accounts.yaml           # 账号配置（人设、平台）
+│   ├── accounts.yaml           # 账号配置（AdsPower ID、平台）
 │   ├── personas.yaml           # 人设定义
 │   └── keywords.yaml           # 关键词配置
 │
@@ -136,7 +136,7 @@ auto-social-finance-ph/
 │   └── publish-social.yml      # 发布社媒
 │
 ├── data/
-│   ├── cookies/                # Cookie 存储（每个账号一个文件夹）
+│   ├── cookies/                # Cookie 存储（如不用 AdsPower）
 │   ├── media/                  # 生成的图片/视频
 │   └── logs/                   # 运行日志
 │
@@ -150,10 +150,10 @@ auto-social-finance-ph/
 | 模块 | 工具 | 费用 |
 |------|------|------|
 | 新闻采集 | Google News RSS + Serper API | 免费额度 |
-| AI 改写 | Gemini 2.0 Flash / Claude Haiku | 免费额度 |
-| 图片生成 | Pexels API + Canva API | 免费 |
-| 视频生成 | HeyGen（$29/月）或 文字+字幕 | 可选付费 |
-| 浏览器自动化 | Playwright + 代理 IP | 代理费用 |
+| AI 改写 | Gemini 2.0 Flash | 免费额度 |
+| 图片生成 | Pexels API + Pillow | 免费 |
+| 视频方案 | 静态图片 + 文字（平台口播/音乐） | 免费 |
+| 浏览器自动化 | AdsPower API | 免费（本地） |
 | 内容管理 | Google Sheets API | 免费 |
 
 ## 发布策略

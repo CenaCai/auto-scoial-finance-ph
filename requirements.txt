@@ -4,14 +4,18 @@
 feedparser>=6.0.0
 requests>=2.31.0
 
-# 内容改写（已内置 Gemini API 调用）
+# 图片生成
+Pillow>=10.0.0
 
 # Google Sheets
 gspread>=6.0.0
 oauth2client>=4.1.3
 pyyaml>=6.0
 
-# 浏览器自动化
+# AdsPower API（通过 HTTP 调用）
+# 无需额外依赖
+
+# 浏览器自动化（备选方案）
 playwright>=1.40.0
 
 # 工具

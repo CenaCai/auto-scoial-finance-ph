@@ -31,3 +31,11 @@ jobs:
           CONTENT_CALENDAR_SHEET_KEY: ${{ secrets.CONTENT_CALENDAR_SHEET_KEY }}
         run: |
           python -m src.main --mode workflow --dry-run
+
+      - name: Commit generated media
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/media/ 2>/dev/null || true
+          git diff --quiet && git diff --staged --quiet || git commit -m "chore: add generated media"
+          git push 2>/dev/null || true
