@@ -1,0 +1,57 @@
+# 账号配置 — 每个账号的人设、平台、发布时段
+
+accounts:
+  # 账号1：专业理财顾问（Facebook 主页 + Group）
+  - id: "advisor_fb"
+    name: "FinanceAdvisor_PH"
+    persona: "professional_advisor"
+    platforms:
+      - facebook_page
+      - facebook_group
+    schedule:
+      - "09:00"  # 早间
+      - "15:00"  # 下午
+      - "20:00"  # 晚间
+    fingerprint:
+      proxy: "${PROXY_ADVISOR}"  # 从环境变量读取
+      user_agent: "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"
+      viewport: { width: 1920, height: 1080 }
+      timezone: "Asia/Manila"
+      locale: "en-PH"
+
+  # 账号2：打工族/真实用户（TikTok + Facebook）
+  - id: "worker_tiktok"
+    name: "PinoyWorkerLife"
+    persona: "relatable_worker"
+    platforms:
+      - tiktok
+      - facebook_profile
+    schedule:
+      - "07:00"  # 早上通勤时段
+      - "12:00"  # 午休
+      - "18:00"  # 下班
+      - "21:00"  # 睡前
+    fingerprint:
+      proxy: "${PROXY_WORKER}"
+      user_agent: "Mozilla/5.0 (iPhone; CPU iPhone OS 17_0 like Mac OS X) AppleWebKit/605.1.15"
+      viewport: { width: 390, height: 844 }
+      timezone: "Asia/Manila"
+      locale: "en-PH"
+
+  # 账号3：金融科普博主（X.com + Facebook）
+  - id: "educator_x"
+    name: "Finance101_PH"
+    persona: "finance_educator"
+    platforms:
+      - xcom
+      - facebook_page
+    schedule:
+      - "08:00"
+      - "14:00"
+      - "19:00"
+    fingerprint:
+      proxy: "${PROXY_EDUCATOR}"
+      user_agent: "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36"
+      viewport: { width: 1440, height: 900 }
+      timezone: "Asia/Manila"
+      locale: "en-PH"

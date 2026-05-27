@@ -1,0 +1,33 @@
+# 每日内容生成工作流
+
+name: Generate Daily Content
+
+on:
+  schedule:
+    - cron: '0 23 * * *'   # 每天 07:00 PHT (UTC 23:00 前一天)
+  workflow_dispatch:
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run content generation
+        env:
+          SERPER_API_KEY: ${{ secrets.SERPER_API_KEY }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GOOGLE_CREDENTIALS_PATH: ${{ secrets.GOOGLE_CREDENTIALS }}
+          CONTENT_CALENDAR_SHEET_KEY: ${{ secrets.CONTENT_CALENDAR_SHEET_KEY }}
+        run: |
+          python -m src.main --mode workflow --dry-run

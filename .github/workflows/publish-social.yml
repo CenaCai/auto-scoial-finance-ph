@@ -1,0 +1,52 @@
+name: Publish to Social Media
+
+on:
+  # 每天 3 个时段（PHT）
+  schedule:
+    - cron: '0 1 * * *'    # 09:00 PHT
+    - cron: '0 7 * * *'    # 15:00 PHT
+    - cron: '0 12 * * *'   # 20:00 PHT
+  workflow_dispatch:
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+          playwright install chromium
+
+      - name: Restore cookies cache
+        uses: actions/cache@v4
+        with:
+          path: data/cookies
+          key: social-cookies-${{ hashFiles('config/accounts.yaml') }}
+          restore-keys: |
+            social-cookies-
+
+      - name: Run publishing
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GOOGLE_CREDENTIALS_PATH: ${{ secrets.GOOGLE_CREDENTIALS }}
+          CONTENT_CALENDAR_SHEET_KEY: ${{ secrets.CONTENT_CALENDAR_SHEET_KEY }}
+          PROXY_ADVISOR: ${{ secrets.PROXY_ADVISOR }}
+          PROXY_WORKER: ${{ secrets.PROXY_WORKER }}
+          PROXY_EDUCATOR: ${{ secrets.PROXY_EDUCATOR }}
+        run: |
+          python -m src.main --mode publish
+
+      - name: Save cookies cache
+        uses: actions/cache/save@v4
+        with:
+          path: data/cookies
+          key: social-cookies-${{ hashFiles('config/accounts.yaml') }}

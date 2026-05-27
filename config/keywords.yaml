@@ -1,0 +1,92 @@
+# 关键词配置 — 新闻过滤和优先级
+
+# 必发关键词（高优先级）
+loan_keywords:
+  - "loan"
+  - "lending"
+  - "borrow"
+  - "credit"
+  - "pawnshop"
+  - "pawnshop"
+  - "microfinance"
+  - "payday"
+  - "cash loan"
+  - "personal loan"
+  - "salary loan"
+  - "business loan"
+  - "emergency loan"
+  - "quick cash"
+  - "instant loan"
+  - "5-6"
+  - "loan shark"
+  - "predatory lending"
+
+# 正常优先级关键词
+finance_keywords:
+  - "finance"
+  - "budget"
+  - "savings"
+  - "investment"
+  - "interest rate"
+  - "inflation"
+  - "economic"
+  - "money"
+  - "financial literacy"
+  - "debt"
+  - "credit score"
+  - "banking"
+  - "digital bank"
+  - "GCash"
+  - "Maya"
+  - "BDO"
+  - "BPI"
+
+# 菲律宾特定关键词
+philippines_keywords:
+  - "Philippines"
+  - "Filipino"
+  - "Pinoy"
+  - "Pinay"
+  - "Metro Manila"
+  - "Cebu"
+  - "Davao"
+  - "OFW"
+  - "sweldo"
+  - "utang"
+  - "perang"
+  - "pinansyal"
+
+# 新闻源配置
+news_sources:
+  google_news:
+    rss_base: "https://news.google.com/rss/search"
+    queries:
+      - "Philippines loan site:ph"
+      - "Philippines finance lending"
+      - "Philippines microfinance"
+      - "BSP lending regulations"
+      - "Filipino personal finance"
+      - "Philippines digital banks"
+  
+  local_news:
+    - "https://inquirer.net"  # Philippine Daily Inquirer
+    - "https://philstar.com"  # Philippine Star
+    - "https://gmanetwork.com/news"  # GMA News
+    - "https://rappler.com"  # Rappler
+  
+  twitter:
+    accounts:
+      - "BSPOnlinePH"  # Bangko Sentral ng Pilipinas
+      - "phfinance"  # Dept of Finance
+      - "ANCALERTS"  # ANC News
+    hashtags:
+      - "#PHFinance"
+      - "#LoanPH"
+      - "#PinoyMoney"
+
+# 过滤规则（排除）
+exclude_keywords:
+  - "advertisement"
+  - "sponsored"
+  - "promoted"
+  - "#ad"

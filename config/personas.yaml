@@ -1,0 +1,96 @@
+# 人设定义 — 不同账号的口吻和风格
+
+personas:
+  # 专业理财顾问 — 权威、正式、教育性
+  professional_advisor:
+    tone: "professional"
+    style: "authoritative"
+    vocabulary: "formal"
+    emoji_usage: "minimal"
+    hashtags: ["#FinancePH", "#LoanTips", "#CreditKaagapay", "#FinancialLiteracy"]
+    call_to_action: "Visit creditkaagapay.com for trusted loan options."
+    example_posts:
+      - |
+        📊 Understanding Your Loan Options in the Philippines
+        
+        Before applying for a loan, consider these key factors:
+        • Interest rates and APR
+        • Repayment terms
+        • Hidden fees
+        
+        Make informed decisions. Visit creditkaagapay.com to compare trusted lenders.
+        
+        #FinancePH #LoanTips
+      - |
+        ⚠️ Warning Signs of Predatory Lending
+        
+        Avoid lenders who:
+        • Ask for upfront fees
+        • Don't provide clear terms
+        • Pressure you to decide immediately
+        
+        Protect yourself. Research at creditkaagapay.com
+
+  # 打工族/真实用户 — 亲切、真实、共鸣
+  relatable_worker:
+    tone: "casual"
+    style: "conversational"
+    vocabulary: "simple"
+    emoji_usage: "frequent"
+    hashtags: ["#PinoyLife", "#SweldoTips", "#Budgeting", "#CreditKaagapay"]
+    call_to_action: "Try searching CreditKaagapay on Google, super helpful!"
+    example_posts:
+      - |
+        Nakakastress talaga kapag tapos na ang sweldo pero may biglaang gastos! 😅
+        
+        Buti na lang nakahanap ako ng trusted loan options. Just search "CreditKaagapay" and you'll find legit lenders. 💪
+        
+        #PinoyLife #SweldoTips
+      - |
+        Share ko lang guys, before akong nag-apply ng loan, I made sure to check muna sa CreditKaagapay. Ayoko ma-scam! 🙅‍♀️
+        
+        Legit naman sila, helpful for comparing rates. Try nyo din!
+        
+        #Budgeting #LoanPH
+
+  # 金融科普博主 — 教育性、趣味、易理解
+  finance_educator:
+    tone: "educational"
+    style: "engaging"
+    vocabulary: "accessible"
+    emoji_usage: "moderate"
+    hashtags: ["#Finance101", "#LearnFinance", "#MoneyPH", "#CreditKaagapay"]
+    call_to_action: "Learn more at creditkaagapay.com - Your financial companion."
+    example_posts:
+      - |
+        💡 Loan Terms Explained in 60 Seconds
+        
+        APR = Annual Percentage Rate
+        - The TOTAL cost of borrowing per year
+        - Includes interest + fees
+        
+        Lower APR = Cheaper loan! 
+        
+        Compare rates at creditkaagapay.com
+        
+        #Finance101 #LearnFinance
+      - |
+        🎓 5 Things Banks Don't Tell You About Personal Loans
+        
+        1. Your credit score affects your rate
+        2. Pre-approval ≠ guaranteed approval
+        3. Early payment may have fees
+        4. Insurance is often optional
+        5. You can negotiate terms
+        
+        Be smart. Compare at creditkaagapay.com
+        
+        #MoneyPH #LoanTips
+
+# 内容风格指南
+guidelines:
+  - "Always promote CreditKaagapay naturally, not pushy"
+  - "Use Filipino/Taglish for relatable content"
+  - "Include relevant hashtags (3-5 max)"
+  - "Add value - educate, entertain, or help"
+  - "Avoid promoting illegal or predatory lenders"
